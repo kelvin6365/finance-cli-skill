@@ -1,5 +1,8 @@
 # finance-cli-skill
 
+[![skills.sh](https://img.shields.io/badge/skills.sh-installable-black)](https://skills.sh/docs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A [Claude](https://claude.ai/code) skill that drives
 [finance-cli](https://github.com/kelvin6365/finance-cli) — a local,
 offline, single-binary terminal finance tracker.
@@ -14,7 +17,9 @@ The skill teaches Claude to:
 
 ## Install
 
-Requires the `finance` CLI on your `PATH`. If you don't have it yet:
+### 1. The CLI itself
+
+This skill drives `finance` — install the binary first if you don't have it:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/kelvin6365/finance-cli/main/install.sh | bash
@@ -22,13 +27,29 @@ curl -fsSL https://raw.githubusercontent.com/kelvin6365/finance-cli/main/install
 bun add -g github:kelvin6365/finance-cli
 ```
 
-Then install this skill:
+(The skill will guide you through this on first use too — it detects when
+the binary is missing and walks you through install + `finance init`.)
+
+### 2. The skill
+
+**Recommended — via [skills.sh](https://skills.sh/docs):**
+
+```bash
+npx skills add kelvin6365/finance-cli-skill
+```
+
+The `skills` CLI (open source at
+[vercel-labs/skills](https://github.com/vercel-labs/skills)) detects your
+agent (Claude Code, Cursor, etc.) and drops the skill into the right
+directory automatically. No manual paths to manage.
+
+**Manual install (git):**
 
 ```bash
 git clone https://github.com/kelvin6365/finance-cli-skill ~/.claude/skills/finance-cli
 ```
 
-Or download the packaged `.skill` from the
+**Manual install (packaged):** download the `.skill` from the
 [Releases page](../../releases) and drop it in `~/.claude/skills/`.
 
 ## Try it
