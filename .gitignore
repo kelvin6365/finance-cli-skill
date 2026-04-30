@@ -1,0 +1,7 @@
+# skill build artefact (regenerated via skill-creator/scripts/package_skill.py)
+*.skill
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
