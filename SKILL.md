@@ -25,9 +25,13 @@ whether each command mutates state. Use it to:
   references for shape changes.
 
 If `finance schema` fails with `ENOENT` or "command not found", the binary
-isn't installed. Tell the user:
+isn't installed. **Drive the install flow** — see
+[references/install.md](references/install.md) for the full walkthrough
+(detect platform, pick install method, verify, run `finance init`).
 
-> Install with `curl -fsSL https://raw.githubusercontent.com/kelvin6365/finance-cli/main/install.sh | bash` (macOS / Linux), or `bun add -g github:kelvin6365/finance-cli` for Bun users.
+If `finance schema` succeeds but the data file is missing (`ENOENT` from a
+later command), the binary is installed but `finance init` hasn't run yet —
+walk the user through it (also covered in install.md).
 
 ## Core operating rules
 
