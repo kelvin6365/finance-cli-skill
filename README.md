@@ -39,18 +39,49 @@ npx skills add kelvin6365/finance-cli-skill
 ```
 
 The `skills` CLI (open source at
-[vercel-labs/skills](https://github.com/vercel-labs/skills)) detects your
-agent (Claude Code, Cursor, etc.) and drops the skill into the right
-directory automatically. No manual paths to manage.
+[vercel-labs/skills](https://github.com/vercel-labs/skills)) auto-detects
+your agent and drops the skill into the right directory.
 
-**Manual install (git):**
+**Manual install (git):** clone into your agent's skills directory.
 
 ```bash
+# Claude Code
 git clone https://github.com/kelvin6365/finance-cli-skill ~/.claude/skills/finance-cli
+
+# any other agent — adjust the destination to match where your agent
+# loads skills from (see your agent's docs)
 ```
 
 **Manual install (packaged):** download the `.skill` from the
-[Releases page](../../releases) and drop it in `~/.claude/skills/`.
+[Releases page](../../releases) and drop it in your skills directory.
+
+## Agent compatibility
+
+Built on the open SKILL.md format (YAML frontmatter + Markdown body), so
+this skill works with any AI agent that reads that format.
+
+**Auto-install via [skills.sh](https://skills.sh/docs)** covers 50+
+agents, including:
+
+- Claude Code
+- OpenCode
+- Codex (OpenAI)
+- Cursor
+- Cline
+- Continue
+- GitHub Copilot
+- Windsurf
+- OpenHands
+- Goose
+- Gemini CLI
+- Aider / AiderDesk
+- Roo Code
+- Kiro CLI
+- (and many more — see [the full list](https://github.com/vercel-labs/skills))
+
+**Other agents (manual install):** Hermes Agent, OpenClaw, or any
+custom agent that consumes SKILL.md — clone the repo into the directory
+your agent reads skills from.
 
 ## Try it
 
